@@ -34,6 +34,7 @@
                                 <input type="password" class="form-control" id="password" name="password">
                             </div>
                             <button type="button" class="btn btn-primary onepress">Auto input</button>
+                            <button type="button" class="btn btn-primary oneclear">clear</button>
                             <button type="button" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
@@ -49,6 +50,14 @@
         $("input#username").val("Stan");
         $("input#email").val("stan@gmail.com");
         $("input#password").val("123456");
+        console.log($("#username").text("Stan"));
+        console.log($("#Email").text("stan@gmail.com"));
+        console.log($("Password").text("123456"));
+    })
+    $(".oneclear").click(function(){
+        $("input#username").val("");
+        $("input#email").val("");
+        $("input#password").val("");
         console.log($("#username").text("Stan"));
         console.log($("#Email").text("stan@gmail.com"));
         console.log($("Password").text("123456"));

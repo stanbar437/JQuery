@@ -69,14 +69,19 @@
         crossorigin="anonymous"></script>
 
     <script>
-        
-        $("td:eq(8)").css("background", "yellow");
-        $("td:odd").css("background", "pink");
-        $("td:even").css("background", "lime");
-        $("td:gt(16)").css("background", "green");
-        $("td:lt(3)").css("background", "blue");
 
+        $("td:eq(8)").css("background", "yellow");
+        // 從0開始選，選到第8個(位置7);
+        $("td:odd").css("background", "pink");
+        // 從0開始選，選取位置為奇數的td
+        $("td:even").css("background", "lime");
+        // 從0開始選，選取位置為偶數的td
+        $("td:gt(16)").css("background", "green");
+        // 選取大於第16個之後所有的td
+        $("td:lt(3)").css("background", "blue");
+        // 選取小於第3個之後所有的td
         $(".wrap :header").css("background", "blue");
+        // 選取h1-h6的header
     </script>
 </body>
 
