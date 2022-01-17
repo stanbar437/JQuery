@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>add</button>
+
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+    </ul>
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let num = 3;
+    $("button").on("click", function () {
+        console.log("btn checked");
+        const newitem = `<li>item${num}</li>`;
+        $("ul").append(newitem);
+        num++;
+    });
+    //   $("li").click(function () {
+    //     console.log("li clicked", $(this).text());
+    //   });
+    $("ul").on("click", "li", function () {
+        console.log("li clicked", $(this).text());
+    });
+
+</script>
+
+</html>

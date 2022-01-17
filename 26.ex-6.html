@@ -62,9 +62,11 @@
     //   .text(districtArray[$("#city").val()][2] + "區");
 
     // 作法二
-    // for (let i = 0; i < $("#district option").length  ; i++) {
-
-    // }
+    for (let i = 0; i < $("#district option").length; i++) {
+      $("#district option")
+        .eq(i)
+        .text(districtArray[$("#city").val()][i] + "區");
+    }
 
     // 作法三 用 jq Foreach 的寫法
     $("#district option").each(function (index, value) {
