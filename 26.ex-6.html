@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <select name="city" id="city">
+              <option value="0">基隆</option>
+              <option value="1">台北</option>
+              <option value="2">新北</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select name="district" id="district">
+              <option value="0">七堵區</option>
+              <option value="1">中正區</option>
+              <option value="2">暖暖區</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let districtArray = [
+    ['七堵', '中正', '暖暖'],
+    ['中正', '大安', '信義'],
+    ['蘆洲', '三重', '新店'],
+  ];
+
+  // 拿文字 .text() -> JS 的 innerTEXT
+  // 拿value .val() -> JS 的 value
+  // 拿html .html() -> JS 的 innerHTML
+
+  $("#city").change(function () {
+    // console.log("city value", $("#city").val());
+    // console.log("districtArray data:", districtArray[$("#city").val()][0]);
+
+    // 作法一
+    // $("#district option")
+    //   .eq(0)
+    //   .text(districtArray[$("#city").val()][0] + "區");
+    // $("#district option")
+    //   .eq(1)
+    //   .text(districtArray[$("#city").val()][1] + "區");
+    // $("#district option")
+    //   .eq(2)
+    //   .text(districtArray[$("#city").val()][2] + "區");
+
+    // 作法二
+    // for (let i = 0; i < $("#district option").length  ; i++) {
+
+    // }
+
+    // 作法三 用 jq Foreach 的寫法
+    $("#district option").each(function (index, value) {
+      //   console.log("index", index);
+      //   console.log("value", $(value));
+      $(value).text(districtArray[$("#city").val()][index] + "區");
+    });
+  });
+
+  // 綁定事件沒事不要放到別人的綁定事件裡面，否則可能會沒綁到
+  $("button").click(function () {
+    console.log("btn clicked");
+  });
+</script>
+
+</html>
