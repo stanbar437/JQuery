@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrap {
+        width: 800px;
+        height: 800px;
+        background-color: #ccc;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        outline: 1px solid red;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <p>p1</p>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <p>p2</p>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <p>p3</p>
+        <div class="box">box8</div>
+        <div class="box">box9</div>
+        <div class="box">box10</div>
+        <p>p4</p>
+        <div class="box">box11</div>
+        <div class="box">box12</div>
+    </div>
+
+    <div class="wrap">
+        <div class="box">box11</div>
+        <!-- <p>1</p> -->
+    </div>
+
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    // $(".box:first-child").css("background", "red");
+    // 選取第一個.box的格子，因為前面有一個p
+    // 第一個.box變成位置2，所以沒有選取
+
+    // $(".box:last-child").css("background", "red");
+    // 選取最後一個.box的格子
+
+
+    // $(".box:first-of-type").css("background", "purple");
+    // 選取第一個type為.box的個子
+
+    // $(".box:last-of-type").css("background", "purple");
+    // 選取最後一個type為.box的個子
+
+
+    // $(".box:nth-child(6)").css("background", "yellow");
+    // 選取第六個且為.box的格子
+
+    // $(".box:nth-last-child(4)").css("background", "yellow");
+    // 選取倒數第四且為.box的格子
+
+
+    // $("p:nth-of-type(3)").css("background", "green");
+    // 選取第三個type為p的格子
+    // $("p:nth-last-of-type(1)").css("background", "green");
+    // 選取倒數第一且type為p的格子
+
+
+    // $("div:only-child").css("background", "green");
+    // $("div:only-of-type").css("background", "blue");
+
+
+</script>
+
+</html>

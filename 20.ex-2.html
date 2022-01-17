@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrap {
+        width: 600px;
+        height: 800px;
+        background-color: #ccc;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        outline: 1px solid red;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="box">box01</div>
+        <div class="box">box02</div>
+        <div class="box">box03</div>
+        <div class="box">box04</div>
+        <div class="box">box05</div>
+        <div class="box">box06</div>
+        <div class="box">box07</div>
+        <div class="box">box08</div>
+        <div class="box">box09</div>
+        <div class="box">box10</div>
+        <div class="box">box11</div>
+        <div class="box">box12</div>
+    </div>
+
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    $(".box").css("background","lime");
+    $(".box").click(function(){
+        $(this).nextAll().css("background","lightblue");
+    })
+
+
+</script>
+
+</html>
