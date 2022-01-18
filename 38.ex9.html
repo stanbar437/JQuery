@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ex9</title>
-    <link
-      rel="stylesheet"
-      href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"
-    />
-  </head>
-  <style>
-    .fontS {
-      font-size: 0.8rem;
-    }
-    .fontM {
-      font-size: 1rem;
-    }
-    .fontL {
-      font-size: 1.2rem;
-    }
-  </style>
-  <body>
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="btn-group">
-          <div class="btn btn-info">S</div>
-          <div class="btn btn-info active">M</div>
-          <div class="btn btn-info">L</div>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ex9</title>
+  <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css" />
+</head>
+<style>
+  .fontS {
+    font-size: 0.8rem;
+  }
+
+  .fontM {
+    font-size: 1rem;
+  }
+
+  .fontL {
+    font-size: 1.2rem;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="btn-group">
+        <div class="btn btn-info sm">S</div>
+        <div class="btn btn-info active md">M</div>
+        <div class="btn btn-info lg">L</div>
       </div>
-      <h2>jQuery</h2>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam velit
-        ipsum corporis rerum eaque repudiandae excepturi, voluptatem, deserunt
-        itaque beatae qui fugit cumque error nesciunt tenetur quis dignissimos
-        minus rem.
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam velit
-        ipsum corporis rerum eaque repudiandae excepturi, voluptatem, deserunt
-        itaque beatae qui fugit cumque error nesciunt tenetur quis dignissimos
-        minus rem.
-      </p>
     </div>
-  </body>
+    <h2>jQuery</h2>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam velit
+      ipsum corporis rerum eaque repudiandae excepturi, voluptatem, deserunt
+      itaque beatae qui fugit cumque error nesciunt tenetur quis dignissimos
+      minus rem.
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam velit
+      ipsum corporis rerum eaque repudiandae excepturi, voluptatem, deserunt
+      itaque beatae qui fugit cumque error nesciunt tenetur quis dignissimos
+      minus rem.
+    </p>
+  </div>
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+  $(".sm").click(function () {
+    if ($("p").hasClass("fontL") || $("p").hasClass("fontM")) {
+      $("p").removeClass("fontL");
+      $("p").removeClass("fontM");
+      $("p").addClass("fontS");;
+    } else {
+      $("p").addClass("fontS");
+    }
+  })
+
+  $(".md").click(function () {
+    if ($("p").hasClass("fontL")) {
+      $("p").removeClass("fontL");
+      $("p").addClass("fontM");
+    } else {
+      $("p").addClass("fontM");
+    }
+  })
+
+  $(".lg").click(function () {
+    $("p").addClass("fontL");
+  })
+</script>
+
 </html>
