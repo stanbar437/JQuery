@@ -42,7 +42,11 @@
       console.log("height", $(window).height());
       console.log("body width", $("body").width());
       console.log("body height", $("body").height());
-      console.log("滑動百分比", $(window).scrollTop() / ($("body").height() - $(window).height()));
+      console.log("滑動百分比", $(window).scrollTop() / ($("body").height() - $(window).height()) * 100 + '%');
+    });
+    
+    $(window).scroll(function () {
+      $(".box").css("width", `${$(window).scrollTop() / ($("body").height() - $(window).height())*100}` + '%');
     });
   </script>
 </body>
