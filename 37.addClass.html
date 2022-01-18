@@ -24,6 +24,7 @@
     <button id="addClass">add Class</button>
     <button id="rmClass">remove Class</button>
     <button id="toggleClass">toggle Class</button>
+    <button id="myToggle">myToggle Class</button>
 
     <div class="box"></div>
 </body>
@@ -43,6 +44,14 @@
         $(".box").toggleClass("blue");
     })
 
+    $("#myToggle").click(function () {
+        console.log("hi", $(".box").hasClass("blue"));
+        if ($(".box").hasClass("blue")) {
+            $(".box").removeClass("blue");
+        } else {
+            $(".box").addClass("blue");
+        }
+    });
 
 </script>
 
