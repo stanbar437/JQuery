@@ -50,28 +50,59 @@
 <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
 <script>
 
-  $(".sm").click(function () {
-    if ($("p").hasClass("fontL") || $("p").hasClass("fontM")) {
-      $("p").removeClass("fontL");
-      $("p").removeClass("fontM");
-      $("p").addClass("fontS");;
-    } else {
-      $("p").addClass("fontS");
-    }
-  })
+  $(".btn").click(function () {
+    // console.log("hi", $(this));
+    // if ($(this).is(":contains('S')")) {
+    //   console.log("s");
+    //   $("p").removeClass();
+    //   $("p").addClass("fontS");
+    //   $(".btn").removeClass("active");
+    //   $(this).addClass("active");
+    // }
+    // if ($(this).is(":contains('M')")) {
+    //   console.log("m");
+    //   $("p").removeClass();
+    //   $("p").addClass("fontM");
+    //   $(".btn").removeClass("active");
+    //   $(this).addClass("active");
+    // }
+    // if ($(this).is(":contains('L')")) {
+    //   console.log("l");
+    //   $("p").removeClass();
+    //   $("p").addClass("fontL");
+    //   $(".btn").removeClass("active");
+    //   $(this).addClass("active");
+    // }
+    // 作法一
 
-  $(".md").click(function () {
-    if ($("p").hasClass("fontL")) {
-      $("p").removeClass("fontL");
-      $("p").addClass("fontM");
-    } else {
-      $("p").addClass("fontM");
+    $(".btn").removeClass("active");
+    $(this).addClass("active");
+    switch ($(this).text()) {
+      case 'S':
+        $("p").removeClass().addClass("fontS");
+        break;
+      case 'M':
+        $("p").removeClass().addClass("fontM");
+        break;
+      case 'L':
+        $("p").removeClass().addClass("fontL");
+        break;
     }
-  })
+    // 作法二
 
-  $(".lg").click(function () {
-    $("p").addClass("fontL");
-  })
+    
+    // const circle = document.querySelectorAll(".color-circle");
+    // circle.forEach((element) => {
+    //   element.addEventListener("click", function () {
+    //     console.log("hi", this);
+    //     console.log("hi", this.style.backgroundColor);
+    //     // 這行會列出inline style的backgroundColor
+    //     console.log("hi", getComputedStyle(this).backgroundColor);
+    //     // this.style.backgroundColor = "red";
+    //   });
+    // });
+    // 未完待續
+  });
 </script>
 
 </html>
