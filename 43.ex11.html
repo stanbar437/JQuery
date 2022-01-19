@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ex11</title>
+  <style>
+    body {
+      margin: 0;
+      height: 300vh;
+    }
+
+    .box {
+      height: calc(100vh - 50px);
+    }
+
+    .nav {
+      height: 50px;
+      outline: 1px solid red;
+    }
+
+    nav.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <nav class="nav">I'm nav</nav>
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const sv = $(".nav").offset().top;
+  $(window).scroll(function () {
+    // console.log("scroll top", $(window).scrollTop());
+    // console.log("$(window).scrollTop()", $(window).scrollTop());
+
+    // console.log('$(".nav").offset().top', $(".nav").offset().top);
+    if ($(window).scrollTop() >= $(".nav").offset().top) {
+      console.log("hi");
+      console.log(sv);
+      console.log("$(window).scrollTop()", $(window).scrollTop());
+      $(".nav").addClass("fixed");
+      if ($(window).scrollTop() < sv) {
+        $(".nav").removeClass("fixed");
+      }
+    }
+  });
+</script>
+
+</html>
