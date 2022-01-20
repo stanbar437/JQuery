@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="getText">get Text</button>
+    <button id="getHtml">get Html</button>
+    <button id="getHtmlText">get HtmlText</button>
+    <button id="getH1Html">get h1 html</button>
+    <button id="getH1Text">get h1 text</button>
+
+    <h1 id="sample">Hello <span>World</span></h1>
+    <h1 id="result"></h1>
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $("#getText").click(function () {
+        const content = $("#sample").text();
+        $("#result").text(content);
+    });
+    $("#getHtml").click(function () {
+        const content = $("#sample").html();
+        $("#result").html(content);
+    });
+    $("#getHtmlText").click(function () {
+        const content = $("#sample").html();
+        $("#result").text(content);
+    });
+    $("#getH1Html").click(function () {
+        const content = $("h1").html();
+        $("#result").text(content);
+    });
+    $("#getH1Text").click(function () {
+        const content = $("h1").text();
+        $("#result").text(content);
+    });
+</script>
+
+</html>
