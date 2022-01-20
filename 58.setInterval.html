@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>check</button>
+    <button>stop</button>
+    <button>start</button>
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    let index = 0;
+    let isPause = false;
+    let myInterval = null;
+
+    $("button").eq(0).click(function () {
+        console.log("myInterval", myInterval);
+        // isPause = !isPause;
+    });
+
+    $("button").eq(1).click(function () {
+        console.log("Stop");
+        clearInterval(myInterval);
+        // isPause = !isPause;
+    });
+
+    $("button").eq(2).click(function () {
+        console.log("Start");
+        myInterval = setInterval(()=> {
+            console.log("index:", index);
+            index++;
+        },1000);
+        // isPause = !isPause;
+    });
+
+</script>
+
+</html>
