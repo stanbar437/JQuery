@@ -51,8 +51,8 @@
 <script>
 
     $("input").click(function () {
-        console.log("input clicked");
-        $("input:checked").parent().parent().css("background", "red");
+        $("tr").css("background", "transparent");
+        $("input:checked").closest("tr").css("background", "lightblue");
     })
 
 </script>

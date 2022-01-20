@@ -45,12 +45,13 @@
 <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
 <script>
 
-    $(".box").css("background","lime");
-    $(".box").click(function(){
-        $(this).nextAll().css("background","lightblue");
-    })
-
-
+    $(".box").click(function () {
+        $(".box").css("background", "transparent")
+        $(this)
+            .css("background", "lightblue")
+            .nextAll()
+            .css("background", "lightblue");
+    });
 </script>
 
 </html>
