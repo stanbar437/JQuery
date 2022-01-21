@@ -16,46 +16,42 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <!-- <div class="mt-2 col-12 col-sm-6 col-lg-3">
-          <div class="card">
-            <img src="./images/item-1.jpg" alt="" />
-            <div class="card-body">
-              <h5>中尉口罩</h5>
-              <p>$160</p>
-            </div>
-          </div>
-        </div> -->
-        </div>
-    </div>
+    <!-- SPA single page application -->
+    <div id="root"></div>
 
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
         $.ajax({
-            method: "POST",
-            url: "http://localhost:3000/",
+            method: "GET",
+            url: "./datas/mask.json",
             dataType: "json",
         }).done(function (result) {
             console.log(result);
             render(result);
         });
 
+        // .js
         function render(data) {
-            let html = "";
-            data.forEach((element) => {
-                html += `<div class="mt-2 col-12 col-sm-6 col-lg-3">
+            // JSX
+            const myCards = data.map((element) => {
+                return `<div class="mt-2 col-12 col-sm-6 col-lg-3">
             <div class="card">
             <img src="./images/${element.image}" alt="" />
             <div class="card-body">
-                <h5>${element.name}</h5>
-                <p class="price">$${element.price}</p>
+            <h5>${element.name}</h5>
+            <p class="price">$${element.price}</p>
             </div>
-            </div>
-            </div>`;
+        </div>
+        </div>`;
             });
 
-            $(".row").html(html);
+            document.getElementById("root").innerHTML = `
+        <div class="container">
+            <div class="row">
+            ${myCards.join("")}
+            </div>
+        </div>
+        `;
         }
     </script>
 </body>
