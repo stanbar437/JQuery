@@ -2,37 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css" />
+    <style>
+        .price {
+            color: red;
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <!-- <div class="mt-2 col-12 col-sm-6 col-lg-3">
-            <div class="card">
-                <img src="./images/item-1.jpg" alt="" />
-                <div class="card-body">
-                <h5>中尉口罩</h5>
-                <p>$160</p>
-                </div>
+          <div class="card">
+            <img src="./images/item-1.jpg" alt="" />
+            <div class="card-body">
+              <h5>中尉口罩</h5>
+              <p>$160</p>
             </div>
-            </div> -->
+          </div>
+        </div> -->
         </div>
     </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $.ajax({
+            method: "GET",
+            url: "./datas/mask.json",
+            dataType: "json",
+        }).done(function (result) {
+            console.log(result);
+            render(result);
+        });
+
+        function render(data) {
+            let html = "";
+            data.forEach((element) => {
+                html += `<div class="mt-2 col-12 col-sm-6 col-lg-3">
+            <div class="card">
+            <img src="./images/${element.image}" alt="" />
+            <div class="card-body">
+                <h5>${element.name}</h5>
+                <p class="price">$${element.price}</p>
+            </div>
+            </div>
+            </div>`;
+            });
+
+            $(".row").html(html);
+        }
+    </script>
 </body>
-<script src="./js/jquery-3.6.0.js"></script>
-<script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    $.ajax({
-        method: "GET",
-        url: "./datas/mask.json",
-        dataType: "json",
-    }).done(function (result) {
-        console.log(result);
-    });
-</script>
 
 </html>
