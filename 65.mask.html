@@ -33,8 +33,8 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
         $.ajax({
-            method: "POST",
-            url: "http://localhost:3000/",
+            method: "GET",
+            url: "./datas/mask.json",
             dataType: "json",
         }).done(function (result) {
             console.log(result);
@@ -45,14 +45,14 @@
             let html = "";
             data.forEach((element) => {
                 html += `<div class="mt-2 col-12 col-sm-6 col-lg-3">
-            <div class="card">
+          <div class="card">
             <img src="./images/${element.image}" alt="" />
             <div class="card-body">
-                <h5>${element.name}</h5>
-                <p class="price">$${element.price}</p>
+              <h5>${element.name}</h5>
+              <p class="price">$${element.price}</p>
             </div>
-            </div>
-            </div>`;
+          </div>
+        </div>`;
             });
 
             $(".row").html(html);
